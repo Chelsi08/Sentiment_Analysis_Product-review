@@ -15,21 +15,41 @@ Build a machine learning model that can classify Amazon product reviews as **Pos
 - Pandas, NumPy
 - NLTK for text preprocessing
 - Scikit-learn (TF-IDF, Logistic Regression, Metrics)
+- TensorFlow + Keras (for LSTM model)
 - Matplotlib + Seaborn for visualization
 
 ##  Steps Performed
-1. Loaded and cleaned raw review data
-2. Removed special characters and stopwords
-3. Converted review text into numerical form using TF-IDF
-4. Trained a Logistic Regression classifier
-5. Evaluated the model using accuracy, precision, recall, F1
-6. Visualized results using a confusion matrix
+1. Traditional Machine Learning (Logistic Regression)
+    - Loaded and cleaned raw review data
+    - Removed punctuation and stopwords
+    - Converted review text into numerical vectors using TF-IDF
+    - Trained a Logistic Regression classifier
+    - Evaluated using accuracy, precision, recall, F1-score
+    - Visualized with a confusion matrix
+
+2. Deep Learning (LSTM Model)
+   - Cleaned text and tokenized using Keras Tokenizer
+   - Converted text into padded sequences
+   - Labeled reviews as positive, neutral, or negative based on rating
+   - Built an LSTM model: `Embedding → LSTM → Dropout → Dense (Softmax)`
+   - Compiled with Adam optimizer and categorical crossentropy
+   - Evaluated using classification report and confusion matrix
+
 
 ## Output
-The model predicts sentiment of unseen product reviews with good accuracy.
+- The logistic regression model performed well on vectorized TF-IDF features.
+- The LSTM model was able to learn contextual patterns in text data.
+- Both models were evaluated and compared.
+
 
 ## Sample Results
-Classification report and confusion matrix showing sentiment performance.
+1. Logistic Regression:
+     - F1-score: ~0.85
+     - Confusion matrix: good class separation
+
+2. LSTM Model:
+     - Improved performance for longer reviews
+     - Classification report generated using test set
 
 ## Built by
 Chelsi Patel
